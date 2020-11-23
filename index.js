@@ -5,8 +5,6 @@ const editor = $("#code-editor")
 const alert = $("#alert")
 const blocksContainer = $("#blocks-container")
 
-console.log(blocks)
-
 function resizeBlock(block) {
   block.css("width", "max-content")
   block.css("height", "max-content")
@@ -44,7 +42,6 @@ function addInputAndSortable(block) {
             },
             over: function() {
               resizeParents(child)
-              console.log('OVER')
             },
             out: function() {
               setTimeout(() => {
@@ -267,7 +264,6 @@ function parseCode(block, script) {
     else if (lastChar === "}")
       newLine = "\n\n"
 
-    console.log(block.val(), block.html(), block.text())
     return script += text + newLine
   }
 }
@@ -364,7 +360,6 @@ $("#editor-selector").on("change", (e) => {
   else
     $("#reset-btn").css("display", "block")
 
-  console.log($("#editor-selector").data("prev"))
   if ($("#editor-selector").data("prev") === "editor") {
     parseBlocks(editor, "")
     setEditorScript(editor.html())
@@ -388,9 +383,9 @@ const setExample = (example) => {
 }
 
 // Intercept log messages and display in alert
-// console.log = function (message) {
-//   alert.append($("<div></div>").text(message))
-// }
+console.log = function (message) {
+  alert.append($("<div></div>").text(message))
+}
 
 // Download html file of the code
 $("#download-btn").click(() => {
@@ -428,83 +423,3 @@ $("#download-btn").click(() => {
 
   downloadLink.remove()
 })
-
-// editor.html('<div class="draggable-block canvas-block ui-draggable ui-draggable-handle" style="width: max-content; height: max-content;">var canvas = document.getElementById("canvas");</div><div class="draggable-block canvas-block ui-draggable ui-draggable-handle" style="width: max-content; height: max-content;">var ctx = canvas.getContext("2d");</div><div class="draggable-block control-block ui-draggable ui-draggable-handle block-div-input-wrapper" style="width: max-content; height: max-content;"><span>if (</span><input class="block-input" placeholder="" value="true"><span>) {</span><div class="block-div-input ui-sortable" style="width: max-content; height: max-content;"><div class="draggable-block misc-block ui-draggable ui-draggable-handle ui-sortable-handle" style="width: max-content; height: max-content;"><span>console.log(</span><input class="block-input" placeholder="message" value="&quot;TRUE&quot;"><span>);</span></div><div class="draggable-block canvas-block ui-draggable ui-draggable-handle" style="width: max-content; height: max-content;"><span>ctx.fillRect(</span><input class="block-input" placeholder="x" value="0"><span>, </span><input class="block-input" placeholder="y" value="0"><span>, </span><input class="block-input" placeholder="width" value="100"><span>, </span><input class="block-input" placeholder="height" value="100"><span>);</span></div><div class="draggable-block control-block ui-draggable ui-draggable-handle block-div-input-wrapper" style="width: max-content; height: max-content;"><span>if (</span><input class="block-input" placeholder="condition" value="1 < 2"><span>) {</span><div class="block-div-input ui-sortable" style="width: max-content; height: max-content;"><div class="draggable-block variable-block ui-draggable ui-draggable-handle" style="z-index: 1000; width: max-content; height: max-content;"><span>var </span><input class="block-input" placeholder="name" value="test"><span> = </span><input class="block-input" placeholder="value" value="12"><span>;</span></div><div class="draggable-block misc-block ui-draggable ui-draggable-handle" style="width: max-content; height: max-content;"><span>console.log(</span><input class="block-input" placeholder="message" value="&quot;TEST: &quot; +test"><span>);</span></div></div><span>}</span></div></div><span>}</span></div>')
-// editor.children().each((index) => {
-//   addInputAndSortable(editor.children().eq(index))
-// })
-
-
-// === TEST CODE ===
-  /*
-    try {
-    var canvas = document.getElementById("canvas")
-    var ctx = canvas.getContext("2d")
-    ctx.fillStyle = "#FF0000"
-    ctx.fillRect(0, 0, 150, 75)
-    var x = 0
-    canvas.addEventListener("keydown", function() {
-      try {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        x++
-        ctx.fillRect(x, 0, 150, 75)
-      } catch (e) {
-        alert.text(e)
-      }
-    })
-  } catch (e) {
-    alert.text(e)
-  }
-  */
-  // =================
-
-
-
-// === CODE GRAVEYARD ===
-
-  // console.log("MOUSE UP", {x: e.pageX, y: e.pageY})
-  // const blockRight = block.offset().left + block.width()
-  // const blockLeft = block.offset().left
-  // const blockBottom = block.offset().top + block.height()
-  // const blockTop = block.offset().top
-
-  // const editorRight = editor.offset().left + editor.width()
-  // const editorLeft = editor.offset().left
-  // const editorBottom = editor.offset().top + editor.height()
-  // const editorTop = editor.offset().top
-
-  // if (blockRight > editorLeft && 
-  //     blockLeft < editorRight && 
-  //     blockBottom > editorTop && 
-  //     blockTop < editorBottom) {
-
-  //     console.log("ADD CODE", code)
-  //     block.unbind()
-  //     block.remove()
-  //     editor.append("\n"+code)
-  // }
-
-
-
-      // newBlock.on("mousedown", (e) => blocksContainer.append(newBlock.clone()))
-    // newBlock.on("mouseup", (e) => addBlock(e, newBlock, code))
-
-
-
-    // Resize a block to fit its children
-// function resizeBlock(block) {
-//   let newHeight = 0
-//   let top = $(window).height()
-//   let bottom = 0
-
-//   block.children().each((index) => {
-//     const rect = block.children().eq(index)[0].getBoundingClientRect()
-//     if (rect.top < top)
-//       top = rect.top
-//       if (rect.bottom > bottom)
-//       bottom = rect.bottom
-//   })
-  
-//   newHeight = bottom - top
-//   block.css("height", newHeight)
-// }
