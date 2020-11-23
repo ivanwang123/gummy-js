@@ -148,7 +148,6 @@ body, html {
 .script-navbar {
   grid-row: 1;
   display: flex;
-  /* align-items: flex-end; */
   border-bottom: 1px solid #ccc;
   padding: 0 1.5rem;
   margin-top: 1rem;
@@ -170,7 +169,6 @@ body, html {
   justify-content: flex-end;
   padding: 0 1.5rem;
   align-items: center;
-  /* background: #333; */
 }
 
 .editor-options * {
@@ -233,6 +231,7 @@ body, html {
   color: #fff;
   padding: 0.2rem 0.3rem;
   border: 1px solid #00000022;
+  white-space: pre;
 }
 
 div.multiblock-input {
@@ -250,10 +249,15 @@ div.multiblock-input {
   outline: none;
 }
 
+.block-input {
+  margin-bottom: 0.15rem;
+}
+
 span.block-input {
   background: #00000022;
   color: #ffffffbb;
-  padding: 0 0.3rem;
+  padding-top: 0rem;
+  padding-bottom: 0.1rem;
 }
 
 .block-input-wrapper {
@@ -261,7 +265,6 @@ span.block-input {
   vertical-align: top;
   align-items: center;
   position: relative;
-  /* min-width: 40px; */
 }
 
 .block-input-wrapper::after {
@@ -271,8 +274,6 @@ span.block-input {
 }
 
 .block-input-wrapper::after, .block-input {
-  /* min-width: 40px;
-  width: 80px; */
   width: auto;
   min-width: 1em;
   grid-area: 1 / 2;
@@ -317,7 +318,7 @@ span.block-input {
 }
 
 .block-div-input-undropped {
-  min-height: 0.8rem;
+  min-height: 1rem;
 }
 
 .canvas-block {

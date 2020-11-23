@@ -166,6 +166,7 @@ for (const [categoryKey, categoryValue] of Object.entries(blocks)) {
             }
           } else {
             const blockText = $("<span></span>")
+            blockText.addClass("block-text")
             blockText.text(piece)
   
             newBlock.append(blockText)
