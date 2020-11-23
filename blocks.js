@@ -189,6 +189,26 @@ export const blocks = {
     "while": {
       "code": "while (%0%) {%1%}",
       "parameters": ["condition", "block"],
+    },
+    "function": {
+      "code": "function %0%(%1%) {%2%}",
+      "parameters": ["name", "parameters", "block"],
+    },
+    "call-function": {
+      "code": "%0%(%1%);",
+      "parameters": ["function", "parameters"]
+    },
+    "return": {
+      "code": "return %0%;",
+      "parameters": ["value"]
+    },
+    "break": {
+      "code": "break;",
+      "parameters": []
+    },
+    "continue": {
+      "code": "continue;",
+      "parameters": []
     }
   },
   "event": {
