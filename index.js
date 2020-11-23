@@ -395,7 +395,7 @@ $("#download-btn").click(() => {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Scratch</title>
+      <title>My Gummy Script</title>
     </head>
     <body>
       <canvas id="canvas" width="400" height="300" tabindex="1" autofocus></canvas>
@@ -410,7 +410,7 @@ $("#download-btn").click(() => {
 
   const blob = new Blob([beforeText+scriptText+afterText], {type: "text/plain"})
 
-  const fileName = "scratch.html"
+  const fileName = "gummy.html"
 
   const downloadLink = $("<a></a>")
 
