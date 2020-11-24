@@ -6,7 +6,7 @@ body, html {
   font-size: 14px;
 }
 
-button, select, textarea {
+button, select, textarea, input {
   font-family: 'Overpass', sans-serif;
 }
 
@@ -239,6 +239,7 @@ button, select, textarea {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  border-radius: 0.2rem;
 }
 
 div.multiblock-input {
@@ -315,11 +316,13 @@ span.block-input {
 
 .block-div-input {
   display: block;
-  min-height: 2rem;
+  min-height: 1.5rem;
   height: min-content;
   min-width: 350px;
   background: #fff;
   margin: 0.2rem 0 0.2rem 1rem;
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
 }
 
 .block-div-input-undropped {

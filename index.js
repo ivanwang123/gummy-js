@@ -68,7 +68,7 @@ function addInputAndSortable(block) {
           blockInput.addClass("block-input")
           blockInput.attr("placeholder", placeholderText)
           blockInput.attr("value", child.val())
-          blockInput.attr("size", 6)
+          blockInput.attr("size", 7)
           blockInput.on("input", function() {
             this.parentNode.dataset.value = this.value.replace(/'/g, '\\"')
           })
