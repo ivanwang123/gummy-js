@@ -105,12 +105,14 @@ function addInputAndSortable(block) {
 
 editor.sortable({
   connectWith: ".ui-sortable",
+  tolerance: "touch",
   update: function(e, ui) {
     addInputAndSortable(ui.item)
   }
 })
 
 blocksContainer.droppable({
+  tolerance: "touch",
   accept: function(e) {
     return e.hasClass("dropped")
   },
