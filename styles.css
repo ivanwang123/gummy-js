@@ -311,7 +311,11 @@ span.block-input {
   padding-right: 0;
   border-right: none;
   display: block;
-  padding-top: 0.3rem;
+  padding-top: 0.4rem;
+}
+
+.block-div-input-wrapper > .block-input-wrapper {
+  margin-top: -0.2rem;
 }
 
 .block-div-input {
