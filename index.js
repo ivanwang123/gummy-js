@@ -403,6 +403,7 @@ const setExample = (example) => {
     editor.html('')
   }
 }
+setExample("editor")
 
 // Intercept log messages and display in alert
 console.log = function (message) {
