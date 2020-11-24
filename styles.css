@@ -139,7 +139,8 @@ button, select, textarea, input {
 #code-editor:empty:before {
   color: #bbb;
   font-size: 1.5em;
-  content: "Start coding...";
+  content: "Start coding . . . \a(Or click 'Editor' dropdown for demos)";
+  white-space: pre;
 }
 
 #script-preview {
@@ -334,27 +335,27 @@ span.block-input {
 }
 
 .canvas-block {
-  background: blueviolet;
-}
-.canvas-header {
-  border-left: 8px solid blueviolet;
-  color: blueviolet;
-}
-
-.path-block {
   background: cornflowerblue;
 }
-.path-header {
+.canvas-header {
   border-left: 8px solid cornflowerblue;
   color: cornflowerblue;
 }
 
+.path-block {
+  background: mediumorchid;
+}
+.path-header {
+  border-left: 8px solid mediumorchid;
+  color: mediumorchid;
+}
+
 .draw-block {
-  background: dodgerblue;
+  background: mediumaquamarine;
 }
 .draw-header {
-  border-left: 8px solid dodgerblue;
-  color: dodgerblue;
+  border-left: 8px solid mediumaquamarine;
+  color: mediumaquamarine;
 }
 
 .line-block {
@@ -366,35 +367,35 @@ span.block-input {
 }
 
 .transformation-block {
-  background: indigo;
+  background: mediumseagreen;
 }
 .transformation-header {
-  border-left: 8px solid indigo;
-  color: indigo;
+  border-left: 8px solid mediumseagreen;
+  color: mediumseagreen;
 }
 
 .text-block {
-  background: rebeccapurple;
+  background: mediumpurple;
 }
 .text-header {
-  border-left: 8px solid rebeccapurple;
-  color: rebeccapurple;
+  border-left: 8px solid mediumpurple;
+  color: mediumpurple;
 }
 
 .shadow-block {
-  background: lightslategray;
+  background: mediumspringgreen;
 }
 .shadow-header {
-  border-left: 8px solid lightslategray;
-  color: lightslategray;
+  border-left: 8px solid mediumspringgreen;
+  color: mediumspringgreen;
 }
 
 .gradient-block {
-  background: mediumvioletred;
+  background: mediumseagreen;
 }
 .gradient-header {
-  border-left: 8px solid mediumvioletred;
-  color: mediumvioletred;
+  border-left: 8px solid mediumseagreen;
+  color: mediumseagreen;
 }
 
 .control-block {
@@ -406,33 +407,33 @@ span.block-input {
 }
 
 .event-block {
-  background: darkcyan;
+  background: mediumvioletred;
 }
 .event-header {
-  border-left: 8px solid darkcyan;
-  color: darkcyan;
+  border-left: 8px solid mediumvioletred;
+  color: mediumvioletred;
 }
 
 .time-block {
-  background: dimgray;
+  background: orchid;
 }
 .time-header {
-  border-left: 8px solid dimgray;
-  color: dimgray;
+  border-left: 8px solid orchid;
+  color: orchid;
 }
 
 .variable-block {
-  background: green;
+  background: chocolate;
 }
 .variable-header {
-  border-left: 8px solid green;
-  color: green;
+  border-left: 8px solid chocolate;
+  color: chocolate;
 }
 
-.debug-block {
+.misc-block {
   background: purple;
 }
-.debug-header {
+.misc-header {
   border-left: 8px solid purple;
   color: purple;
 }

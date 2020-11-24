@@ -235,10 +235,14 @@ export const blocks = {
       "parameters": ["interval"]
     }
   },
-  "debug": {
+  "misc": {
     "console-log": {
       "code": "console.log(%0%);",
       "parameters": ["message"]
+    },
+    "comment": {
+      "code": "// %0%;",
+      "parameters": ["comment"]
     },
     "freestyle": {
       "code": "%0%",

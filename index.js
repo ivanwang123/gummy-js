@@ -189,7 +189,10 @@ const resizeCanvas = () => {
   $("#canvas").css("width", $(".canvas-wrapper").width())
   $("#canvas").css("height", $(".canvas-wrapper").width() * 0.75)
 }
-resizeCanvas()
+
+$(document).ready(() => {
+  resizeCanvas()
+})
 
 $(window).resize(() => {
   resizeCanvas()
@@ -271,7 +274,7 @@ function parseCode(block, script) {
 
 // Recursively remove dropped class and set input values
 function parseBlocks(block, script) {
-  block.removeClass("dropped")
+  // block.removeClass("dropped")
   if (block.children().length) {
     block.children().each((index) => {
       parseBlocks(block.children().eq(index), script)
@@ -288,8 +291,8 @@ function parseBlocks(block, script) {
 
 const runCode = () => {
 
-  // parseBlocks(editor, "")
-  // console.log(editor.html())
+  parseBlocks(editor, "")
+  console.log(editor.html())
 
   // Clone canvas to remove all event listeners
   let old_element = $("#canvas")
@@ -400,9 +403,9 @@ const setExample = (example) => {
 }
 
 // Intercept log messages and display in alert
-console.log = function (message) {
-  alert.append($("<div></div>").text(message))
-}
+// console.log = function (message) {
+//   alert.append($("<div></div>").text(message))
+// }
 
 // Download html file of the code
 $("#download-btn").click(() => {
