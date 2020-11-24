@@ -325,8 +325,13 @@ const runCode = () => {
   canvas.focus()
 }
 
-// Run code on run/refresh
-$("#run-btn").click(runCode)
+// Run code on play button click
+$("#run-btn").click(() => {
+  $("#run-btn").css("animation", "none")
+  runCode()
+})
+
+// Reset canvas on stop button click
 $("#stop-btn").click(() => {
   // Clone canvas to remove all event listeners
   let old_element = $("#canvas")
