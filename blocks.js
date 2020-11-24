@@ -219,12 +219,20 @@ export const blocks = {
   },
   "time": {
     "timeout": {
-      "code": "setTimeout(function() {%0%}, %1%);",
-      "parameters": ["block", "time"]
+      "code": "var %0% = setTimeout(function() {%1%}, %2%);",
+      "parameters": ["name", "block", "time"]
     },
     "interval": {
-      "code": "setInterval(function() {%0%}, %1%);",
-      "parameters": ["block", "time"]
+      "code": "var %0% = setInterval(function() {%1%}, %2%);",
+      "parameters": ["name", "block", "time"]
+    },
+    "clear-timeout": {
+      "code": "clearTimeout(%0%);",
+      "parameters": ["timeout"]
+    },
+    "clear-interval": {
+      "code": "clearInterval(%0%);",
+      "parameters": ["interval"]
     }
   },
   "debug": {

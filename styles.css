@@ -2,12 +2,12 @@ body, html {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Overpass', sans-serif;
   font-size: 14px;
 }
 
-button, select {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+button, select, textarea {
+  font-family: 'Overpass', sans-serif;
 }
 
 /* === GENERAL === */
@@ -110,12 +110,12 @@ button, select {
   opacity: 0.7;
 }
 
-#refresh-btn {
-  background: yellowgreen;
-  opacity: 0.7;
+#stop-btn {
+  background: crimson;
+  opacity: 0.5;
 }
-#refresh-btn:hover {
-  opacity: 0.6;
+#stop-btn:hover {
+  opacity: 0.4;
 }
 
 #download-btn {
@@ -218,7 +218,7 @@ button, select {
   box-sizing: border-box;
 }
 
-#blocks-container * {
+#blocks-container .draggable-block {
   margin-bottom: 0.5rem;
 }
 
@@ -236,6 +236,9 @@ button, select {
   padding: 0.2rem 0.3rem;
   border: 1px solid #00000022;
   white-space: pre;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 div.multiblock-input {
@@ -253,14 +256,10 @@ div.multiblock-input {
   outline: none;
 }
 
-.block-input {
-  margin-bottom: 0.15rem;
-}
-
 span.block-input {
   background: #00000022;
   color: #ffffffbb;
-  padding-top: 0rem;
+  padding-top: 0.1rem;
   padding-bottom: 0.1rem;
 }
 
@@ -296,7 +295,7 @@ span.block-input {
 
 ::placeholder {
   color: #ffffff88;
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
@@ -310,6 +309,8 @@ span.block-input {
 .block-div-input-wrapper {
   padding-right: 0;
   border-right: none;
+  display: block;
+  padding-top: 0.3rem;
 }
 
 .block-div-input {

@@ -148,7 +148,7 @@ for (const [categoryKey, categoryValue] of Object.entries(blocks)) {
         if (piece.length) {
           if (piece !== " " && !isNaN(piece)) {
             if (parameters[parseInt(piece)] === "block") {
-              const blockInput = $("<div></div>")
+              const blockInput = $("<span></span>")
               blockInput.addClass("block-div-input")
               blockInput.addClass("block-div-input-undropped")
               newBlock.addClass("block-div-input-wrapper")
@@ -159,7 +159,7 @@ for (const [categoryKey, categoryValue] of Object.entries(blocks)) {
               blockInput.text("freestyle")
               newBlock.append(blockInput)
             } else {
-              const blockInput  = $("<span></span>")
+              const blockInput = $("<span></span>")
               blockInput.addClass("block-input")
               blockInput.text(parameters[parseInt(piece)])
               newBlock.append(blockInput)
@@ -322,7 +322,23 @@ const runCode = () => {
 
 // Run code on run/refresh
 $("#run-btn").click(runCode)
-$("#refresh-btn").click(runCode)
+$("#stop-btn").click(() => {
+  // Clone canvas to remove all event listeners
+  let old_element = $("#canvas")
+  let new_element = old_element.clone()
+  old_element.replaceWith(new_element)
+
+  // Clear all intervals/timeouts
+  for(let i = 0; i < 10000; i++) {
+    window.clearInterval(i)
+    window.clearTimeout(i)
+  }
+
+  let canvas = $("#canvas")
+
+  // Remove script elements
+  canvas.children().remove()
+})
 
 // Switch between block mode and script mode
 $("#script-mode").click(() => {
