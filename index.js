@@ -5,8 +5,10 @@ const editor = $("#code-editor")
 const alert = $("#alert")
 const blocksContainer = $("#blocks-container")
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  console.log("MOBILE")
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  $(".canvas-section").remove()
+  $(".blocks-section").remove()
+  $("#mobile-alert").css("display", "flex")
 }
 
 function resizeBlock(block) {
