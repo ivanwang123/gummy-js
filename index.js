@@ -5,6 +5,10 @@ const editor = $("#code-editor")
 const alert = $("#alert")
 const blocksContainer = $("#blocks-container")
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  console.log("MOBILE")
+}
+
 function resizeBlock(block) {
   block.css("width", "max-content")
   block.css("height", "max-content")
